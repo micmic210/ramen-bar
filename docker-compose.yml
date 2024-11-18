@@ -1,0 +1,10 @@
+version: '3.8'
+services:
+  db:
+    image: postgres:17
+    environment:
+      POSTGRES_USER: ramen_user
+      POSTGRES_PASSWORD: secure_password
+      POSTGRES_DB: ramen_bar_db
+    ports:
+      - "5433:5432"
