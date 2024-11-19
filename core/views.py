@@ -1,5 +1,5 @@
-from django.shortcuts import render, redirect
-from django.contrib.auth.decorators import user_passes_test
+from django.shortcuts import render, redirect, get_object_or_404
+from django.contrib.auth.decorators import login_required, user_passes_test
 from django.contrib import messages
 from .models import Reservation
 from .forms import ReservationForm
@@ -7,14 +7,15 @@ from .forms import ReservationForm
 def is_admin(user):
     return user.is_authenticated and user.role == 'admin'
 
-@user_passes_test(is_admin)
+@login_required
 def home(request):
     return render(request, 'core/home.html')
 
+@user_passes_test(is_admin)
 def admin_dashboard(request):
     return render(request, 'core/admin_dashboard.html')
 
-@user_passes_test
+@login_required
 def make_reservation(request):
     if request.method == "POST":
         form = ReservationForm(request.POST)
@@ -31,16 +32,16 @@ def make_reservation(request):
                 reservation.user = request.user
                 reservation.save()
                 messages.success(request, "Your reservation has been booked!")
-                return redirect("home") # Redirect to home or another page
+                return redirect("home") # Redirect to home 
     else:
         form = ReservationForm()
     
-    return render (request, "core/make_reservation.html", {"form": form})
+    return render(request, "core/make_reservation.html", {"form": form})
 
 
-@user_passes_test
+@login_required
 def cancel_reservation(request, reservation_id):
-    reservation = Reservation.objects.get(id=reservation_id, user=request.user)
+    reservation = get_object_or_404(Reservation, id=reservation_id, user=request.user)
     if reservation:
         reservation.delete()
         messages.success(request, "Your reservation has been canceled.")
