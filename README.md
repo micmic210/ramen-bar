@@ -129,3 +129,125 @@ Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` f
 ---
 
 Happy coding!
+
+
+
+
+Here are the **User Stories** and **Acceptance Criteria** tailored to your project requirements. Each User Story is defined using the **As a [role], I want [feature], so that [benefit]** format.
+
+---
+
+### **User Story 1: View Restaurant Information**
+**Description**: 
+As a **visitor**, I want to view information about the restaurant, so that I can learn about its background and offerings.
+
+**Acceptance Criteria**:
+- [ ] The homepage (`index.html`) displays a welcoming introduction to the restaurant.
+- [ ] The "About Us" page (`about.html`) contains details about the restaurant's history and specialties.
+- [ ] Links to other pages are accessible from the navigation bar.
+
+---
+
+### **User Story 2: View Menu**
+**Description**: 
+As a **visitor**, I want to view the restaurant's menu, so that I can decide what to order.
+
+**Acceptance Criteria**:
+- [ ] The "Menu" page (`menu.html`) lists all available menu items with their names, descriptions, and prices.
+- [ ] Menu data is dynamically loaded from the database.
+- [ ] The menu page is responsive and accessible on both desktop and mobile devices.
+
+---
+
+### **User Story 3: Make a Reservation**
+**Description**: 
+As a **customer**, I want to book a table for a specific date and time, so that I can secure a spot at the restaurant.
+
+**Acceptance Criteria**:
+- [ ] The "Reservation" page (`reservation.html`) has a form to input date, time, number of people, and contact information.
+- [ ] The system validates that the table is available for the chosen date and time.
+- [ ] Customers receive a confirmation message upon successful booking.
+- [ ] If a table is unavailable, customers see a message prompting them to choose another time.
+
+---
+
+### **User Story 4: Avoid Double Bookings**
+**Description**: 
+As a **restaurant manager**, I want to ensure that tables are not double-booked, so that customers have a guaranteed spot.
+
+**Acceptance Criteria**:
+- [ ] The system prevents duplicate reservations for the same table and time.
+- [ ] Only available tables are shown for booking.
+
+---
+
+### **User Story 5: Manage Reservations**
+**Description**: 
+As a **customer**, I want to view, edit, or cancel my reservation, so that I can make changes if my plans change.
+
+**Acceptance Criteria**:
+- [ ] Customers can access their reservation details using their contact information.
+- [ ] Customers can update their reservation's date, time, or party size.
+- [ ] Customers can cancel a reservation with a confirmation modal.
+- [ ] A success or error message is displayed after editing or canceling.
+
+---
+
+### **User Story 6: Contact the Restaurant**
+**Description**: 
+As a **visitor**, I want to send a message to the restaurant, so that I can ask questions or provide feedback.
+
+**Acceptance Criteria**:
+- [ ] The "Contact" page (`contact.html`) contains a form for entering a name, email, and message.
+- [ ] The system sends an email to the restaurant's inbox upon form submission.
+- [ ] A modal appears to confirm successful message delivery.
+
+---
+
+### **User Story 7: Authentication for Reservation Management**
+**Description**: 
+As a **customer**, I want to log in to manage my reservations, so that my information is secure.
+
+**Acceptance Criteria**:
+- [ ] Customers can create an account and log in to the system.
+- [ ] Only logged-in users can view, edit, or cancel their reservations.
+- [ ] The system ensures secure password storage and authentication.
+
+---
+
+### **User Story 8: Admin Menu Management**
+**Description**: 
+As a **restaurant manager**, I want to add, edit, or delete menu items, so that I can keep the menu up-to-date.
+
+**Acceptance Criteria**:
+- [ ] Admin users can log in to the Django admin panel.
+- [ ] Menu items can be added, edited, or deleted from the database via the admin panel.
+- [ ] Changes to the menu are immediately reflected on the website.
+
+---
+
+### **User Story 9: Deployment and Scalability**
+**Description**: 
+As a **developer**, I want the project to be deployed to Heroku with a PostgreSQL database, so that it is accessible online and scalable.
+
+**Acceptance Criteria**:
+- [ ] The project uses SQLite during development and PostgreSQL in production.
+- [ ] Environment variables (e.g., `DATABASE_URL`) are properly configured for Heroku deployment.
+- [ ] The application is accessible via a public URL provided by Heroku.
+
+---
+
+### **User Story 10: Responsive Design**
+**Description**: 
+As a **visitor**, I want the website to be fully responsive, so that I can access it on any device.
+
+**Acceptance Criteria**:
+- [ ] All pages are optimized for desktop, tablet, and mobile views.
+- [ ] Bootstrap is used for responsive layout design.
+- [ ] Navigation and modals function correctly across devices.
+
+
+
+
+
+
